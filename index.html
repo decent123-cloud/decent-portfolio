@@ -4,17 +4,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Decent Emmanuel- Full Stack Developer Portfolio">
-    <meta name="keywords" content="Emmanuel Decent, Full Stack Developer, Portfolio, Web Development">
-    <title>Emmanuel Decent - Full Stack Developer Portfolio</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Emmanuel Decent - Full Stack Developer Portfolio. Explore my projects, skills, and services. Based in Nigeria, passionate about web development.">
+    <meta name="keywords"
+        content="Emmanuel Decent, Full Stack Developer, Web Developer, Portfolio, JavaScript, React, Node.js, Nigeria, FUTMINNA">
+    <meta name="author" content="Emmanuel Decent">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Emmanuel Decent - Full Stack Developer">
+    <meta property="og:description"
+        content="Professional portfolio of Emmanuel Decent, a Full Stack Developer from Nigeria">
+    <meta property="og:image" content="https://emmanueldecent.github.io/decent-potfolio/profile.jpg">
+    <meta property="og:url" content="https://emmanueldecent.github.io/decent-potfolio/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Emmanuel Decent - Full Stack Developer">
+    <meta name="twitter:description" content="Professional portfolio of Emmanuel Decent">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://emmanueldecent.github.io/decent-potfolio/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- JSON-LD Structured Data for Google -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Emmanuel Decent",
+        "jobTitle": "Full Stack Developer",
+        "url": "https://emmanueldecent.github.io/decent-potfolio/",
+        "sameAs": [
+            "https://github.com/emmanueldecent",
+            "https://linkedin.com/in/emmanueldecent"
+        ],
+        "location": {
+            "@type": "Place",
+            "name": "Federal University of Technology Minna, Niger State, Nigeria"
+        },
+        "email": "emmanuelabershi483@gmail.com"
+    }
+    </script>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/index.min.js"></script>
+
+    <title>Emmanuel Decent - Full Stack Developer | Portfolio</title>
 </head>
 
 <body>
+    <!-- Skip to main content (accessibility) -->
+    <a href="#main" class="skip-link">Skip to main content</a>
+
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="container">
-            <div class="logo"> Decent Emmannuel</div>
+            <div class="logo">
+                <a href="#hero" class="logo-link">ED</a>
+            </div>
             <ul class="nav-links">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -22,7 +81,7 @@
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <div class="hamburger">
+            <div class="hamburger" aria-label="Toggle navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -30,243 +89,332 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="title">Hi, I'm <span class="highlight">Decent Emmanuel</span></h1>
-                <p class="subtitle">Full Stack Developer | Learning & Growing</p>
-                <p class="description">A passionate developer from Federal University of Technology Minna a 300L Civile
-                    Engineering Student, Nigeria,
-                    dedicated to building modern web applications and continuously learning new technologies.</p>
-                <div class="cta-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm a Full Stack Developer and a 300L Civil Engineering student at Federal University of
-                        Technology Minna in Niger State,
-                        Nigeria. I'm passionate about web development and constantly working on improving my skills.</p>
-                    <p>As a learner, I embrace every opportunity to grow and develop my technical expertise. I enjoy
-                        building web applications, solving complex problems, and exploring new technologies in the tech
-                        ecosystem.</p>
-                    <p>My journey in tech is just beginning, and I'm excited to collaborate on projects that challenge
-                        me and help me grow as a developer.</p>
-                </div>
-                <div class="about-stats">
-                    <div class="stat">
-                        <h3>Projects</h3>
-                        <p>5+</p>
+    <main id="main">
+        <!-- Hero Section -->
+        <section id="hero" class="hero" role="banner">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="profile-image-container" data-aos="zoom-in">
+                        <img src="profile.jpg" alt="Emmanuel Decent - Full Stack Developer" class="profile-image"
+                            loading="lazy">
                     </div>
-                    <div class="stat">
-                        <h3>Languages</h3>
-                        <p>6+</p>
+                    <h1 class="title" data-aos="fade-up">
+                        Hi, I'm <span class="highlight">Emmanuel Decent</span>
+                    </h1>
+                    <p class="subtitle" data-aos="fade-up" data-aos-delay="100">
+                        Full Stack Developer | Learning & Growing
+                    </p>
+                    <p class="description" data-aos="fade-up" data-aos-delay="200">
+                        A passionate developer from Federal University of Technology Minna, Nigeria, dedicated to
+                        building modern web applications and continuously learning new technologies.
+                    </p>
+                    <div class="cta-buttons" data-aos="fade-up" data-aos-delay="300">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                     </div>
-                    <div class="stat">
-                        <h3>Experience</h3>
-                        <p>Growing</p>
+                </div>
+                <div class="hero-scroll">
+                    <span>Scroll to explore</span>
+                    <div class="scroll-indicator">
+                        <div class="scroll-dot"></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <h2 class="section-title">My Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Frontend</h3>
-                    <ul class="skill-list">
-                        <li>HTML & CSS</li>
-                        <li>JavaScript</li>
-                        <li>React</li>
-                        <li>Responsive Design</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Backend</h3>
-                    <ul class="skill-list">
-                        <li>Node.js</li>
-                        <li>Express.js</li>
-                        <li>Python</li>
-                        <li>REST APIs</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Databases</h3>
-                    <ul class="skill-list">
-                        <li>MongoDB</li>
-                        <li>SQL</li>
-                        <li>Firebase</li>
-                        <li>Data Modeling</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <h3>Tools & Others</h3>
-                    <ul class="skill-list">
-                        <li>Git & GitHub</li>
-                        <li>VS Code</li>
-                        <li>Figma</li>
-                        <li>Linux</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Dev class for beginners Platform</h3>
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">View
-                            Code</a>
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text" data-aos="fade-right">
+                        <p>I'm a Full Stack Developer and student at Federal University of Technology Minna in Niger
+                            State, Nigeria. I'm passionate about web development and constantly working on improving my
+                            skills.</p>
+                        <p>As a learner, I embrace every opportunity to grow and develop my technical expertise. I enjoy
+                            building web applications, solving complex problems, and exploring new technologies in the
+                            tech ecosystem.</p>
+                        <p>My journey in tech is just beginning, and I'm excited to collaborate on projects that
+                            challenge me and help me grow as a developer.</p>
                     </div>
-                    <p class="project-description">A full tutorial platform for beginners in web development, it help
-                        upcoming developers learn web development skills very fast.</p>
-                    <div class="project-tags">
-                        <span class="tag">React</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">MongoDB</span>
-                        <span class="tag">Stripe</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Task Management App</h3>
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">View
-                            Code</a>
-                    </div>
-                    <p class="project-description">A collaborative task management application with real-time updates
-                        and user authentication.</p>
-                    <div class="project-tags">
-                        <span class="tag">React</span>
-                        <span class="tag">Firebase</span>
-                        <span class="tag">Redux</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Undergraduate Past Questions and Answers Platform</h3>
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">View
-                            Code</a>
-                    </div>
-                    <p class="project-description">A platform for students to access past questions and answers for
-                        various courses and Levels.</p>
-                    <div class="project-tags">
-                        <span class="tag">Express.js</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">CSS</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Blog Platform</h3>
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">View
-                            Code</a>
-                    </div>
-                    <p class="project-description">A modern blog platform with markdown support, comments, and user
-                        authentication.</p>
-                    <div class="project-tags">
-                        <span class="tag">Next.js</span>
-                        <span class="tag">MongoDB</span>
-                        <span class="tag">Tailwind CSS</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Chat Application</h3>
-                        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="project-link">View
-                            Code</a>
-                    </div>
-                    <p class="project-description">A real-time chat application with messaging, notifications, and user
-                        presence tracking.</p>
-                    <div class="project-tags">
-                        <span class="tag">Socket.io</span>
-                        <span class="tag">React</span>
-                        <span class="tag">Node.js</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <p class="contact-subtitle">I'm always open to new opportunities and collaborations. Feel free to reach out!
-            </p>
-
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="info-item">
-                        <span class="label">Email:</span>
-                        <a href="mailto:emmanuelabershi483@gmail.com">emmanuelabershi483@gmail.com</a>
-                    </div>
-                    <div class="info-item">
-                        <span class="label">Location:</span>
-                        <p>Federal University of Technology Minna, Niger State, Nigeria</p>
-                    </div>
-                    <div class="info-item">
-                        <span class="label">Follow Me:</span>
-                        <div class="social-links">
-                            <a href="https://github.com/emmanueldecent" target="_blank" rel="noopener noreferrer"
-                                class="social-btn">GitHub</a>
-                            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
-                                class="social-btn">LinkedIn</a>
-                            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"
-                                class="social-btn">Twitter</a>
+                    <div class="about-stats" data-aos="fade-left">
+                        <div class="stat">
+                            <h3>5+</h3>
+                            <p>Projects Completed</p>
+                        </div>
+                        <div class="stat">
+                            <h3>6+</h3>
+                            <p>Languages & Frameworks</p>
+                        </div>
+                        <div class="stat">
+                            <h3>100%</h3>
+                            <p>Dedication & Growth</p>
                         </div>
                     </div>
                 </div>
-
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">My Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category" data-aos="fade-up">
+                        <div class="skill-icon">💻</div>
+                        <h3>Frontend</h3>
+                        <ul class="skill-list">
+                            <li>HTML5 & CSS3</li>
+                            <li>JavaScript (ES6+)</li>
+                            <li>React & Redux</li>
+                            <li>Responsive Design</li>
+                            <li>Tailwind CSS</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                        <div class="skill-icon">⚙️</div>
+                        <h3>Backend</h3>
+                        <ul class="skill-list">
+                            <li>Node.js & Express</li>
+                            <li>Python & Django</li>
+                            <li>REST APIs</li>
+                            <li>Authentication</li>
+                            <li>Server Management</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                        <div class="skill-icon">🗄️</div>
+                        <h3>Databases</h3>
+                        <ul class="skill-list">
+                            <li>MongoDB</li>
+                            <li>PostgreSQL & MySQL</li>
+                            <li>Firebase</li>
+                            <li>Data Modeling</li>
+                            <li>Database Optimization</li>
+                        </ul>
+                    </div>
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                        <div class="skill-icon">🛠️</div>
+                        <h3>Tools & Others</h3>
+                        <ul class="skill-list">
+                            <li>Git & GitHub</li>
+                            <li>VS Code & DevTools</li>
+                            <li>Figma & Design</li>
+                            <li>Linux & CLI</li>
+                            <li>Docker & CI/CD</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+                <div class="projects-grid">
+                    <article class="project-card" data-aos="fade-up">
+                        <div class="project-header">
+                            <h3>Decent portfolio</h3>
+                            <a href="https://github.com/emmanueldecent" target="_blank" rel="noopener noreferrer"
+                                class="project-link" aria-label="View Decent portfolio code on GitHub">View Code</a>
+                        </div>
+                        <p class="project-description">A responsive and accessible portfolio website built with modern
+                            web technologies, including HTML5, CSS3, JavaScript, and React, for my personal use.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Responsive</span>
+                            <span class="tag">Stripe</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-header">
+                            <h3>Undergraduate Past Questions & Answers</h3>
+                            <a href="https://github.com/emmanueldecent" target="_blank" rel="noopener noreferrer"
+                                class="project-link" aria-label="View Past Questions & Answers code on GitHub">View
+                                Code</a>
+                        </div>
+                        <p class="project-description">A web application for managing and accessing past questions and
+                            answers for undergraduate students, built with React and Firebase, it make past questions &
+                            answers easily accessible.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Firebase</span>
+                            <span class="tag">Responsive</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-header">
+                            <h3>Dev. class</h3>
+                            <a href="https://github.com/emmanueldecent" target="_blank" rel="noopener noreferrer"
+                                class="project-link" aria-label="View Dev. class code on GitHub">View Code</a>
+                        </div>
+                        <p class="project-description">A simple web application for managing and displaying developer
+                            class materials and resources, built with HTML, CSS, and JavaScript, i call it DEVELOPER 5.
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-header">
+                            <h3>Blog Platform</h3>
+                            <a href="https://github.com/emmanueldecent" target="_blank" rel="noopener noreferrer"
+                                class="project-link" aria-label="View Blog Platform code on GitHub">View Code</a>
+                        </div>
+                        <p class="project-description">A modern blog platform with markdown support, comments section,
+                            and user authentication with social login.</p>
+                        <div class="project-tags">
+                            <span class="tag">Next.js</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">Tailwind CSS</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="project-header">
+                            <h3>Chat Application</h3>
+                            <a href="https://github.com/emmanueldecent" target="_blank" rel="noopener noreferrer"
+                                class="project-link" aria-label="View Chat Application code on GitHub">View Code</a>
+                        </div>
+                        <p class="project-description">A real-time chat application with messaging, notifications, user
+                            presence tracking, and file sharing capabilities.</p>
+                        <div class="project-tags">
+                            <span class="tag">Socket.io</span>
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="project-header">
+                            <h3>Portfolio Website</h3>
+                            <a href="https://github.com/emmanueldecent/decent-potfolio" target="_blank"
+                                rel="noopener noreferrer" class="project-link"
+                                aria-label="View Portfolio Website code on GitHub">View Code</a>
+                        </div>
+                        <p class="project-description">A responsive portfolio website showcasing projects, skills, and
+                            contact information with SEO optimization.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+                <p class="contact-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    I'm always open to new opportunities and collaborations. Feel free to reach out!
+                </p>
+
+                <div class="contact-content">
+                    <div class="contact-info" data-aos="fade-right">
+                        <h3>Contact Information</h3>
+                        <div class="info-item">
+                            <span class="info-icon">📧</span>
+                            <div>
+                                <span class="label">Email</span>
+                                <a href="mailto:emmanuelabershi483@gmail.com">emmanuelabershi483@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">📍</span>
+                            <div>
+                                <span class="label">Location</span>
+                                <p>Federal University of Technology Minna, Niger State, Nigeria</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-icon">🔗</span>
+                            <div>
+                                <span class="label">Follow Me</span>
+                                <div class="social-links">
+                                    <a href="https://github.com/emmanueldecent" target="_blank"
+                                        rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+                                        <i>GitHub</i>
+                                    </a>
+                                    <a href="https://linkedin.com/in/emmanueldecent" target="_blank"
+                                        rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+                                        <i>LinkedIn</i>
+                                    </a>
+                                    <a href="https://twitter.com/emmanueldecent" target="_blank"
+                                        rel="noopener noreferrer" class="social-btn" aria-label="Twitter">
+                                        <i>Twitter</i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="contactForm" data-aos="fade-left" novalidate>
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required aria-required="true"
+                                placeholder="Your name">
+                            <span class="error-message" id="nameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required aria-required="true"
+                                placeholder="your@email.com">
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+234 (optional)">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required aria-required="true"
+                                placeholder="What is this about?">
+                            <span class="error-message" id="subjectError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" required aria-required="true"
+                                placeholder="Your message here..."></textarea>
+                            <span class="error-message" id="messageError"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
+                        <div class="form-status" id="formStatus"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
-            <p>&copy; 2026 Emmanuel Decent. All rights reserved.</p>
-            <p>Built with ❤️ using HTML, CSS & JavaScript</p>
+            <div class="footer-content">
+                <p>&copy; 2026 Emmanuel Decent. All rights reserved.</p>
+                <p>Built with ❤️ using HTML, CSS & JavaScript | <a href="#top">Back to top</a></p>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/emmanueldecent" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://linkedin.com/in/emmanueldecent" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="mailto:emmanuelabershi483@gmail.com">Email</a>
+            </div>
         </div>
     </footer>
 
+    <!-- AOS (Animate On Scroll) Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- Main Script -->
     <script src="script.js"></script>
 </body>
 
