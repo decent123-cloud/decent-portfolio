@@ -190,7 +190,7 @@ body {
     border-radius: 50%;
     bottom: -50px;
     left: -50px;
-    animation: float 8s ease-in-out infinite reverse;
+    animation: float 6s ease-in-out infinite reverse;
 }
 
 .hero-content {
@@ -204,6 +204,7 @@ body {
     display: flex;
     justify-content: center;
     margin-bottom: 2rem;
+    animation: float 15s ease-in-out infinite;
 }
 
 .profile-image {
@@ -292,7 +293,7 @@ body {
     height: 8px;
     background: white;
     border-radius: 2px;
-    animation: scroll 2s ease-in-out infinite;
+    animation: scroll 1s ease-in-out infinite;
 }
 
 /* ==================== BUTTONS ==================== */
