@@ -28,6 +28,7 @@ decent-potfolio/
 ## 🚀 Getting Started
 
 ### Prerequisites
+
 - A modern web browser (Chrome, Firefox, Safari, Edge)
 - A text editor (VS Code, Sublime Text, etc.)
 - Git (optional, for version control)
@@ -35,6 +36,7 @@ decent-potfolio/
 ### Installation
 
 1. **Clone the repository** (or download the files):
+
 ```bash
 git clone https://github.com/emmanueldecent/decent-potfolio.git
 cd decent-potfolio
@@ -61,11 +63,12 @@ cd decent-potfolio
 2. **Update Colors** (Optional):
    - Open `styles.css`
    - Modify CSS variables in `:root` section:
+
    ```css
    :root {
-       --primary-color: #6366f1;    /* Change to your preferred color */
-       --secondary-color: #8b5cf6;
-       /* ... other colors ... */
+     --primary-color: #6366f1; /* Change to your preferred color */
+     --secondary-color: #8b5cf6;
+     /* ... other colors ... */
    }
    ```
 
@@ -75,44 +78,51 @@ cd decent-potfolio
    - Modify tech stacks and descriptions
 
 4. **Update Contact Email**:
-   - Find `emmanuelabershi483@gmail.com` in the file
+   - Find `emmanuelabershi481@gmail.com` in the file
    - Replace with your actual email address
 
 ## 📝 Sections Overview
 
 ### 1. Navigation Bar
+
 - Sticky navigation with smooth scroll links
 - Logo with gradient effect
 - Mobile-responsive hamburger menu
 
 ### 2. Hero Section
+
 - Large, engaging headline
 - Subtitle and description
 - Call-to-action buttons
 
 ### 3. About Section
+
 - Personal introduction
 - Statistics (Projects, Languages, Experience)
 - Hover effects for interactivity
 
 ### 4. Skills Section
+
 - Organized by categories
 - Visual checkmarks
 - Responsive grid layout
 
 ### 5. Projects Section
+
 - Project cards with descriptions
 - Technology tags
 - Links to GitHub repositories
 - Hover animations
 
 ### 6. Contact Section
+
 - Contact information
 - Contact form
 - Social media links
 - Email integration
 
 ### 7. Footer
+
 - Copyright information
 - Build credit
 
@@ -121,6 +131,7 @@ cd decent-potfolio
 ### Deploy to GitHub Pages (Free & Easy)
 
 1. **Push to GitHub**:
+
 ```bash
 git add .
 git commit -m "Initial portfolio commit"
@@ -199,4 +210,3 @@ This project is open source and available under the MIT License.
 **Happy coding! 🚀**
 
 If you found this portfolio template helpful, please consider giving it a star on GitHub!
-

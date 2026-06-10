@@ -353,6 +353,17 @@ body {
     transform: translateY(-3px);
 }
 
+.btn-tertiary {
+    background: rgba(255, 255, 255, 0.18);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.btn-tertiary:hover {
+    background: rgba(255, 255, 255, 0.32);
+    transform: translateY(-3px);
+}
+
 /* ==================== SECTIONS ==================== */
 section {
     padding: 6rem 0;
@@ -1005,6 +1016,11 @@ section {
     }
 
     .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .case-study-content,
+    .testimonials-grid {
         grid-template-columns: 1fr;
     }
 

@@ -1,9 +1,43 @@
 // ==================== EMAILJS INITIALIZATION ====================
-// Only initialize if EmailJS library is loaded
+// To send messages directly from the website using EmailJS:
+// 1. Sign up at https://www.emailjs.com and add an email service.
+// 2. Create a template with these fields:
+//    - from_name
+//    - from_email
+//    - subject
+//    - message
+//    - phone
+//    - to_email (optional if the template already targets your email)
+// 3. In the EmailJS template body, use the same variables, for example:
+//    Subject: {{subject}}
+//    Message: Name: {{from_name}}\nEmail: {{from_email}}\nPhone: {{phone}}\n\n{{message}}
+// 4. Copy your Service ID, Template ID, and Public Key into the constants below.
+// 5. Make sure the EmailJS template uses `{{to_email}}` if you want the code-provided recipient.
+const EMAILJS_SERVICE_ID = 'service_f1pbrot';
+const EMAILJS_TEMPLATE_ID = 'template_rv526m4';
+const EMAILJS_PUBLIC_KEY = 'RJE1HwRjpdeyWg8ID';
+const CONTACT_EMAIL = 'emmanuelabershi481@gmail.com';
+
+function isEmailJSConfigured() {
+    return EMAILJS_SERVICE_ID !== 'YOUR_SERVICE_ID' &&
+        EMAILJS_TEMPLATE_ID !== 'YOUR_TEMPLATE_ID' &&
+        EMAILJS_PUBLIC_KEY !== 'YOUR_PUBLIC_KEY';
+}
+
+function isEmailJSAvailable() {
+    return typeof emailjs !== 'undefined' && typeof emailjs.send === 'function';
+}
+
 if (typeof emailjs !== 'undefined') {
-    emailjs.init('YOUR_PUBLIC_KEY');
+    if (isEmailJSConfigured()) {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+        console.log('EmailJS initialized successfully');
+    } else {
+        console.warn('EmailJS detected but not configured. Update service/template/public keys in script.js to enable direct form sending.');
+    }
+    console.log('EmailJS object loaded:', typeof emailjs, 'send function:', typeof emailjs.send);
 } else {
-    console.warn('EmailJS library not loaded. Contact form may not work.');
+    console.warn('EmailJS library not loaded. The contact form cannot send directly until EmailJS is available.');
 }
 
 // ==================== AOS INITIALIZATION ====================
@@ -62,39 +96,55 @@ if (contactForm) {
             const templateParams = {
                 from_name: document.getElementById('name').value,
                 from_email: document.getElementById('email').value,
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                user_name: document.getElementById('name').value,
+                user_email: document.getElementById('email').value,
+                reply_to: document.getElementById('email').value,
                 phone: document.getElementById('phone').value || 'Not provided',
+                contact_number: document.getElementById('phone').value || 'Not provided',
                 subject: document.getElementById('subject').value,
                 message: document.getElementById('message').value,
-                to_email: 'emmanuelabershi483@gmail.com'
+                to_email: CONTACT_EMAIL
             };
 
-            // Send email using EmailJS
-            const response = await emailjs.send(
-                'service_YOUR_SERVICE_ID',  // Replace with your EmailJS service ID
-                'template_YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
-                templateParams
-            );
+            if (isEmailJSConfigured() && isEmailJSAvailable()) {
+                const response = await emailjs.send(
+                    EMAILJS_SERVICE_ID,
+                    EMAILJS_TEMPLATE_ID,
+                    templateParams
+                );
 
-            // Success message
-            formStatus.className = 'form-status success';
-            formStatus.textContent = '✅ Message sent successfully! I\'ll get back to you soon.';
-            contactForm.reset();
-
-            // Log the response
-            console.log('Email sent successfully:', response);
+                formStatus.className = 'form-status success';
+                formStatus.textContent = '✅ Message sent successfully! I\'ll get back to you soon.';
+                contactForm.reset();
+                console.log('Email sent successfully:', response);
+            } else if (!isEmailJSConfigured()) {
+                formStatus.className = 'form-status error';
+                formStatus.textContent = '❌ EmailJS is not configured correctly. Update service/template/public keys in script.js.';
+                console.warn('EmailJS configuration is missing or still using placeholder values.');
+            } else {
+                formStatus.className = 'form-status error';
+                formStatus.textContent = '❌ EmailJS is unavailable or not loaded. Check the browser console for details.';
+                console.warn('EmailJS object is loaded but send() is unavailable.');
+            }
 
         } catch (error) {
-            // Error message
             console.error('Error sending email:', error);
             formStatus.className = 'form-status error';
-            formStatus.textContent = '❌ Failed to send message. Please try again or email me directly.';
+            formStatus.textContent = '❌ Failed to send message. See browser console for EmailJS details.';
         } finally {
-            // Re-enable button
             submitBtn.disabled = false;
             submitBtn.textContent = originalBtnText;
-
-            // Scroll to status message
             formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function openMailto(params) {
+            const subject = encodeURIComponent(params.subject);
+            const body = encodeURIComponent(
+                `Name: ${params.from_name}\nEmail: ${params.from_email}\nPhone: ${params.phone}\n\n${params.message}`
+            );
+            window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
         }
     });
 }
