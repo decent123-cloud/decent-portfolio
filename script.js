@@ -333,3 +333,19 @@ if ('IntersectionObserver' in window) {
 }
 
 console.log('Portfolio loaded successfully! ✨');
+
+// ==================== DYNAMIC PROJECT COUNTERS ====================
+function updateProjectCounters() {
+    try {
+        const totalProjects = document.querySelectorAll('.projects-grid .project-card').length;
+        const projectsCountEl = document.getElementById('projectsCount');
+        const featuredCountEl = document.getElementById('featuredProjectsCount');
+
+        if (projectsCountEl) projectsCountEl.textContent = totalProjects + '+';
+        if (featuredCountEl) featuredCountEl.textContent = totalProjects + '+';
+    } catch (e) {
+        console.warn('Failed to update project counters', e);
+    }
+}
+
+window.addEventListener('load', updateProjectCounters);

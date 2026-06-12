@@ -631,6 +631,30 @@ section {
     color: white;
 }
 
+/* Project thumbnail and actions */
+.project-thumb {
+    margin-bottom: 1rem;
+}
+.project-thumb img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+}
+.project-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+.tag.achievement {
+    background: linear-gradient(135deg, #ffedd5, #fff7ed);
+    color: #b45309;
+    border: 1px solid rgba(249, 115, 22, 0.08);
+}
+
 /* ==================== CONTACT SECTION ==================== */
 .contact {
     background: var(--light-bg);
