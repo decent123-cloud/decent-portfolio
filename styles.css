@@ -24,6 +24,8 @@
 
 html {
     scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 body {
@@ -38,6 +40,12 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* ==================== ACCESSIBILITY ==================== */
@@ -966,6 +974,14 @@ section {
 }
 
 @media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll;
+    }
+
+    .hero::before,
+    .hero::after {
+        display: none;
+    }
     .nav-links {
         display: none;
         position: absolute;
